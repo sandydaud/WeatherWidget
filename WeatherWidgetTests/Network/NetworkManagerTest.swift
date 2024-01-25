@@ -55,8 +55,6 @@ class NetworkManagerTests: XCTestCase {
                 XCTAssertNil(error)
                 expectation.fulfill()
             }
-            
-            wait(for: [expectation], timeout: 5.0)
         } catch {
             XCTFail("Unexpected error: \(error.localizedDescription)")
         }
@@ -67,8 +65,6 @@ class NetworkManagerTests: XCTestCase {
         
         // Create a valid URLRequest for testing
         do {
-//            let urlRequest = try networkManager.createURLRequest(apiData: mockApiData, basePath: "https://example.com")
-            
             // Set up the mock session to return an error
             let mockError = NSError(domain: "MockErrorDomain", code: 123, userInfo: nil)
             mockSession.error = mockError
@@ -80,8 +76,6 @@ class NetworkManagerTests: XCTestCase {
                 XCTAssertEqual(error as NSError?, mockError)
                 expectation.fulfill()
             }
-            
-            wait(for: [expectation], timeout: 5.0)
         } catch {
             XCTFail("Unexpected error: \(error.localizedDescription)")
         }

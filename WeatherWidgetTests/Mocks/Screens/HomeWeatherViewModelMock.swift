@@ -33,7 +33,7 @@ class HomeWeatherViewModelMock: HomeWeatherViewModel {
     // Override the fetchWeather function to track its usage
     override func fetchWeather(
         onSuccess: ((WeatherResponse) -> Void)? = nil,
-        onError: ((Error) -> Void)? = nil
+        onError: ((NetworkError) -> Void)? = nil
     ) {
         didCallFetchWeather = true
         super.fetchWeather(onSuccess: onSuccess, onError: onError)

@@ -28,7 +28,6 @@ class PhotoSelectionViewModelMock: PhotoSelectionViewModel {
     override func fetchPhotos() {
         didCallFetchPhotos = true
         print("enter this dummy")
-//        super.fetchPhotos()
     }
 
     // Simulate requesting photo library authorization

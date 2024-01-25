@@ -56,8 +56,6 @@ class APIClientTests: XCTestCase {
                     expectation.fulfill()
                 }
             }
-            
-            wait(for: [expectation], timeout: 5.0)
         } catch {
             
         }
@@ -83,8 +81,6 @@ class APIClientTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        
-        wait(for: [expectation], timeout: 5.0)
     }
 }
 

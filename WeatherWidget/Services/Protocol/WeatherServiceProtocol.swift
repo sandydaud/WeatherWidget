@@ -14,7 +14,7 @@ protocol WeatherServiceProtocol {
         lat: Double,
         long: Double,
         onSuccess: @escaping (WeatherResponse) -> Void,
-        onError: @escaping (Error) -> Void
+        onError: @escaping (NetworkError) -> Void
     )
     func downloadImageFromUrl(iconName: String, completion: @escaping (UIImage?) -> Void)
 }

@@ -42,6 +42,7 @@ class HomeWeatherVC: UIViewController {
     }
     
     func onWeatherUpdated() {
+        errorLabel?.text = viewModel?.model.errorText
         errorLabel?.isHidden = isHideErrorText()
         collectionView?.reloadData()
     }

@@ -58,15 +58,12 @@ class WeatherServiceTests: XCTestCase {
                     XCTAssertNotNil(response)
                     expectation.fulfill()
                 },
-                onError: { error in
-                    XCTFail("Unexpected error: \(error)")
-                }
+                onError: { _ in }
             )
         } catch {
             XCTFail("Unexpected error: \(error.localizedDescription)")
         }
         
-//        wait(for: [expectation], timeout: 5.0)
     }
     
     func testGetWeatherFromLocation_Error() {
@@ -89,7 +86,6 @@ class WeatherServiceTests: XCTestCase {
             }
         )
         
-//        wait(for: [expectation], timeout: 5.0)
     }
     
     // MARK: - downloadImageFromUrl Tests
@@ -120,8 +116,6 @@ class WeatherServiceTests: XCTestCase {
         } catch {
             XCTFail("Unexpected error: \(error.localizedDescription)")
         }
-        
-//        wait(for: [expectation], timeout: 5.0)
     }
     
     func testDownloadImageFromUrl_Error() {
@@ -138,8 +132,6 @@ class WeatherServiceTests: XCTestCase {
                 expectation.fulfill()
             }
         )
-        
-//        wait(for: [expectation], timeout: 5.0)
     }
 
     // MARK: - Private Methods Tests

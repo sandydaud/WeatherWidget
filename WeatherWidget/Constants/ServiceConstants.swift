@@ -17,4 +17,4 @@ let LOCATION_LATTITUDE_KEY = "lat"
 let LOCATION_LONGITUDE_KEY = "lon"
 
 // request value
-let APP_ID_VALUE = "4567faad4816e8655c798b71b2c89527" // change API key based on yours
+let APP_ID_VALUE = "<FILL_YOUR_API_KEY_HERE>" // change API key based on yours

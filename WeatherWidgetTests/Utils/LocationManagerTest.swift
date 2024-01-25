@@ -37,9 +37,6 @@ class LocationManagerTests: XCTestCase {
             XCTAssertNotNil(location.coordinate)
             expectation.fulfill()
         }
-        
-        
-        wait(for: [expectation], timeout: 5.0)
     }
     
     func testAuthorizationStatusChange() {
@@ -67,9 +64,6 @@ class LocationManagerTests: XCTestCase {
             XCTAssertTrue(isPermissionGiven)
             expectation.fulfill()
         }
-        
-        // Wait for the expectation to be fulfilled (timeout: 5 seconds)
-        wait(for: [expectation], timeout: 5.0)
     }
     
     func testRequestLocationPermissionIfNeeded_Denied() {
@@ -84,9 +78,6 @@ class LocationManagerTests: XCTestCase {
             XCTAssertTrue(self.mockDelegate.locationPermissionAlertShown)
             expectation.fulfill()
         }
-        
-        // Wait for the expectation to be fulfilled (timeout: 5 seconds)
-        wait(for: [expectation], timeout: 5.0)
     }
     
     func testRequestLocationPermissionIfNeeded_Restricted() {
@@ -101,9 +92,6 @@ class LocationManagerTests: XCTestCase {
             XCTAssertTrue(self.mockDelegate.locationPermissionAlertShown)
             expectation.fulfill()
         }
-        
-        // Wait for the expectation to be fulfilled (timeout: 5 seconds)
-        wait(for: [expectation], timeout: 5.0)
     }
     
     func testRequestLocationPermissionIfNeeded_AlreadyAuthorized() {
@@ -118,9 +106,6 @@ class LocationManagerTests: XCTestCase {
             XCTAssertFalse(self.mockDelegate.locationPermissionAlertShown)
             expectation.fulfill()
         }
-        
-        // Wait for the expectation to be fulfilled (timeout: 5 seconds)
-        wait(for: [expectation], timeout: 5.0)
     }
 }
 

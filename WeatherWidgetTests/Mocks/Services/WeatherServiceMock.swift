@@ -10,13 +10,13 @@ import UIKit
 
 class WeatherServiceMock: WeatherServiceProtocol {
     
-    var stubbedGetWeatherFromLocationCompletionResult: (WeatherResponse?, Error?) = (nil, nil)
+    var stubbedGetWeatherFromLocationCompletionResult: (WeatherResponse?, NetworkError?) = (nil, nil)
     var stubbedDownloadImageFromUrlCompletionResult: UIImage? = nil
     
     var didCallGetWeatherFromLocation = false
     var didCallDownloadImageFromUrl = false
     
-    func getWeatherFromLocation(lat: Double, long: Double, onSuccess: @escaping (WeatherResponse) -> Void, onError: @escaping (Error) -> Void) {
+    func getWeatherFromLocation(lat: Double, long: Double, onSuccess: @escaping (WeatherResponse) -> Void, onError: @escaping (NetworkError) -> Void) {
         didCallGetWeatherFromLocation = true
         if let result = stubbedGetWeatherFromLocationCompletionResult.0 {
             onSuccess(result)

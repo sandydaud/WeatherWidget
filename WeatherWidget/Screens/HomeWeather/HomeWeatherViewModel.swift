@@ -59,7 +59,7 @@ class HomeWeatherViewModel: NSObject {
     // MARK: Weather
     func fetchWeather(
         onSuccess: ((WeatherResponse) -> Void)? = nil,
-        onError: ((Error) -> Void)? = nil
+        onError: ((NetworkError) -> Void)? = nil
     ) {
         // Check if cached data is available
         if let cachedWeatherData = cacheManager.retrieveWeatherData(),
@@ -96,6 +96,7 @@ class HomeWeatherViewModel: NSObject {
                 guard let ws = self else { return }
                 ws.model.isLoading = false
                 ws.model.errorText = errorResponse.localizedDescription
+                ws.updateView()
                 onError?(errorResponse)
             }
         )

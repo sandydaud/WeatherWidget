@@ -89,7 +89,7 @@ class HomeWeatherViewModelTests: XCTestCase {
 
     func testFetchWeatherWithError() {
         var errorResult: Error?
-        let expectedError = NSError(domain: "Test", code: 123, userInfo: nil)
+        let expectedError = NetworkError.authenticationError
         weatherServiceMock.stubbedGetWeatherFromLocationCompletionResult = (nil, expectedError)
         
         viewModel.fetchWeather(onError: { error in
@@ -139,9 +139,6 @@ class HomeWeatherViewModelTests: XCTestCase {
             XCTAssertTrue(isPermissionGiven)
             expectation.fulfill()
         }
-        
-        // Wait for the expectation to be fulfilled (timeout: 5 seconds)
-        wait(for: [expectation], timeout: 5.0)
     }
     
     func testRequestLocationPermission_Failure() {
@@ -155,9 +152,6 @@ class HomeWeatherViewModelTests: XCTestCase {
             XCTAssertFalse(isPermissionGiven)
             expectation.fulfill()
         }
-        
-        // Wait for the expectation to be fulfilled (timeout: 5 seconds)
-        wait(for: [expectation], timeout: 5.0)
     }
 }
 

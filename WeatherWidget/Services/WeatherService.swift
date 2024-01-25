@@ -21,7 +21,7 @@ class WeatherService: WeatherServiceProtocol {
         lat: Double,
         long: Double,
         onSuccess: @escaping (WeatherResponse) -> Void,
-        onError: @escaping (Error) -> Void
+        onError: @escaping (NetworkError) -> Void
     ) {
         api.fetch(
             request: getAPIData(lat: lat, long: long),
