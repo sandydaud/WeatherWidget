@@ -8,7 +8,7 @@ This app use API from [https://openweathermap.org/api](https://openweathermap.or
 
 # Demo
 
-![Weather App Demo](/Demo/WeatherAppDemo.mov)
+![Weather App Demo](https://drive.google.com/file/d/1C-WbUt97ZyuFaWMttvohuVmWQyc-eZGu/view?usp=sharing)
 
 # Project Structure
 
